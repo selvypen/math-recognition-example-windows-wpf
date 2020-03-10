@@ -21,7 +21,7 @@ The *Selvy Math SDK* API documentation is available on [Selvy Handwriting websit
 * Launch example app  
 ![](/screenshot-1.png)
 
-* Write korean and english  
+* Write mathematical expressions 
 ![](/screenshot-2.png)
 
 * Result  
