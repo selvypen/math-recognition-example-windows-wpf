@@ -4,7 +4,7 @@ This example app shows how to recognize mathematical expressions using the *Selv
 ## Prerequisite
 1. Microsoft Visual Studio 2015 above
 1. Microsoft .NET Framework 4.5.2 above
-1. NuGet Package: [WpfMath v0.8.0](https://github.com/ForNeVeR/wpf-math)
+1. NuGet Package: [WpfMath v0.8.0](https://www.nuget.org/packages/WpfMath/0.8.0) (.NET library for rendering mathematical formula)
 
 ## Getting started
 1. Download *Selvy Math SDK for Windows* and License key  
@@ -28,4 +28,5 @@ The *Selvy Math SDK* API documentation is available on [Selvy Handwriting websit
 ![](/screenshot-3.png)
 
 ## License
-© 2020. [SELVAS AI Inc.](http://www.selvasai.com) All Rights Reserved.
+- Math Recognition example: © 2020. [SELVAS AI Inc.](http://www.selvasai.com) All Rights Reserved.
+- WpfMath: [MIT](https://licenses.nuget.org/MIT)
