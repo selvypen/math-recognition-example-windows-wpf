@@ -215,11 +215,7 @@ namespace mathRecognitionExample
                 currentPoint = e.GetPosition(writingCanvas);
                 writingCanvas.Children.Add(line);
 
-                // skips duplicated point
-                if (line.X1 != line.X2 && line.Y1 != line.Y2)
-                {
-                    Hwr.AddPoint(inkObj, (int)line.X2, (int)line.Y2);
-                }
+                Hwr.AddPoint(inkObj, (int)line.X2, (int)line.Y2);
             }
         }
 
