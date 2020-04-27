@@ -57,7 +57,7 @@ namespace mathRecognitionExample
             Hwr.SetExternalResourcePath("./hdb");
             Hwr.SetRecognitionMode(settingObj, Hwr.MULTICHAR);
             Hwr.SetCandidateSize(settingObj, MAX_CANDIDATES);
-            Hwr.AddLanguage(settingObj, Hwr.DLANG_MATH_MIDDLE_EXPANSION, Hwr.DTYPE_MATH_MD);
+            SetLanguage(Hwr.DLANG_MATH_MIDDLE_EXPANSION);
             Hwr.SetAttribute(settingObj);
 
             return status;
@@ -132,6 +132,22 @@ namespace mathRecognitionExample
             return candidates.ToString();
         }
 
+        private void SetLanguage(int language)
+        {
+            Hwr.ClearLanguage(settingObj);
+
+            if (language == Hwr.DLANG_MATH_MIDDLE_EXPANSION)
+            {
+                Hwr.AddLanguage(settingObj, Hwr.DLANG_MATH_MIDDLE_EXPANSION, Hwr.DTYPE_MATH_MD);
+            }
+            else if (language == Hwr.DLANG_MATH_CHEMICAL)
+            {
+                Hwr.AddLanguage(settingObj, Hwr.DLANG_MATH_CHEMICAL, Hwr.DTYPE_MATH_CF);
+            }
+
+            Hwr.SetAttribute(settingObj);
+        }
+
         private void Clear()
         {
             int childrenCount = VisualTreeHelper.GetChildrenCount(writingCanvas);
@@ -163,6 +179,18 @@ namespace mathRecognitionExample
         private void SetFormula(String text)
         {
             formula.Formula = text;
+        }
+
+        private void Mathematical_Click(object sender, RoutedEventArgs e)
+        {
+            Clear();
+            SetLanguage(Hwr.DLANG_MATH_MIDDLE_EXPANSION);
+        }
+
+        private void Chemical_Click(object sender, RoutedEventArgs e)
+        {
+            Clear();
+            SetLanguage(Hwr.DLANG_MATH_CHEMICAL);
         }
 
         private void RecognizeButton_Click(object sender, RoutedEventArgs e)
