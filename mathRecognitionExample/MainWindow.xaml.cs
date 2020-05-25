@@ -138,7 +138,7 @@ namespace mathRecognitionExample
 
             if (language == Hwr.DLANG_MATH_MIDDLE_EXPANSION)
             {
-                Hwr.AddLanguage(settingObj, Hwr.DLANG_MATH_MIDDLE_EXPANSION, Hwr.DTYPE_MATH_MD);
+                Hwr.AddLanguage(settingObj, Hwr.DLANG_MATH_MIDDLE_EXPANSION, Hwr.DTYPE_MATH_EX);
             }
             else if (language == Hwr.DLANG_MATH_CHEMICAL)
             {
