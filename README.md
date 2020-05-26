@@ -18,14 +18,20 @@ This example app shows how to recognize mathematical expressions using the **Sel
 The **Selvy Pen SDK for Math** API documentation is available on [Selvy Pen SDK website](http://handwriting.selvasai.com/math)
 
 ## Screenshot
-* Launch example app  
+* Launch example app
 ![](/screenshot-1.png)
 
-* Write mathematical expressions 
+* Write mathematical expression
 ![](/screenshot-2.png)
 
-* Result  
+* Recognition result
 ![](/screenshot-3.png)
+
+* Write chemical formula
+![](/screenshot-4.png)
+
+* Recognition result
+![](/screenshot-5.png)
 
 ## License
 - Math Recognition example: © 2020. [SELVAS AI Inc.](http://www.selvasai.com) All Rights Reserved.
