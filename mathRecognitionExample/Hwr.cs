@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  *  @brief Math Handwriting APIs
  *  @date 2020/01/17
  *  @file Hwr.cs
@@ -9,6 +9,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Selvasai
 {
@@ -458,7 +459,28 @@ namespace Selvasai
         /// <returns>후보문자</returns>
         public static String GetCandidate(IntPtr block, int index, [In, Out] ref int length)
         {
-            return Marshal.PtrToStringUni(GetCandidatePtr(block, index, ref length));
+            IntPtr candidatePtr = Hwr.GetCandidatePtr(block, index, ref length);
+            StringBuilder candidates = new StringBuilder();
+
+            if (length > 0)
+            {
+                String os = System.Environment.OSVersion.Platform.ToString();
+                if (os.Contains("Win"))
+                {
+                    candidates.Append(Marshal.PtrToStringUni(candidatePtr, length));
+                }
+                else
+                {
+                    int[] buffers = new int[length];
+                    Marshal.Copy(candidatePtr, buffers, 0, length);
+                    foreach (uint buf in buffers)
+                    {
+                        candidates.Append(Convert.ToChar(buf));
+                    }
+                }
+            }
+
+            return candidates.ToString();
         }
     }
 }
